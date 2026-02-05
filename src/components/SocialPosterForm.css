@@ -9,6 +9,11 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode .post-form {
+  background: rgba(30, 30, 30, 0.9);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
 .form-section {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
@@ -27,6 +32,10 @@
   font-size: 1.3rem;
 }
 
+body.dark-mode .form-section h3 {
+  color: #f5f5f5;
+}
+
 .form-field {
   margin-bottom: 1.5rem;
 }
@@ -40,6 +49,10 @@
   color: #444;
   font-size: 0.95rem;
   flex-wrap: wrap;
+}
+
+body.dark-mode .form-field label {
+  color: #d1d5db;
 }
 
 .required {
@@ -96,12 +109,26 @@
   font-family: inherit;
   font-size: 0.95rem;
   transition: border-color 0.3s ease;
+  background: white;
+  color: #333;
+}
+
+body.dark-mode .text-input,
+body.dark-mode .file-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f5f5f5;
 }
 
 .text-input:focus,
 .file-input:focus {
   outline: none;
   border-color: #667eea;
+}
+
+body.dark-mode .text-input:focus,
+body.dark-mode .file-input:focus {
+  border-color: #8b5cf6;
 }
 
 textarea.text-input {
@@ -142,6 +169,12 @@ textarea.text-input {
   padding: 1.5rem;
   border-radius: 10px;
   margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+body.dark-mode .platform-notes {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .platform-notes h4 {
@@ -150,12 +183,41 @@ textarea.text-input {
   font-size: 1rem;
 }
 
+body.dark-mode .platform-notes h4 {
+  color: #f5f5f5;
+}
+
 .platform-note {
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 0.8rem;
   font-size: 0.9rem;
   line-height: 1.5;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .platform-note {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.platform-note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.platform-note-text {
+  color: #666;
+}
+
+body.dark-mode .platform-note-text {
+  color: #9ca3af;
 }
 
 .platform-note:last-child {

@@ -1,10 +1,23 @@
 import { platforms } from '../utils/platformConfig';
+import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import './PostPreview.css';
 
-function PostPreview({ selectedPlatforms, formData, onClose }) {
+function PostPreview({ selectedPlatforms, formData, onClose, darkMode }) {
   return (
-    <div className="preview-overlay" onClick={onClose}>
-      <div className="preview-modal" onClick={e => e.stopPropagation()}>
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="preview-overlay" 
+      onClick={onClose}
+    >
+      <motion.div 
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className={`preview-modal ${darkMode ? 'dark' : ''}`} 
+        onClick={e => e.stopPropagation()}
+      >
         <div className="preview-header">
           <h2>Post Preview</h2>
           <button className="close-button" onClick={onClose}>✕</button>
@@ -100,15 +113,24 @@ function PostPreview({ selectedPlatforms, formData, onClose }) {
         </div>
         
         <div className="preview-footer">
-          <button className="preview-button secondary" onClick={onClose}>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="preview-button secondary" 
+            onClick={onClose}
+          >
             ← Back to Edit
-          </button>
-          <button className="preview-button primary">
+          </motion.button>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="preview-button primary"
+          >
             🚀 Confirm & Post
-          </button>
+          </motion.button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import { platforms, validatePost } from '../utils/platformConfig';
 import PlatformSelector from './PlatformSelector';
 import PostPreview from './PostPreview';
+import Tooltip from './Tooltip';
 import './SocialPosterForm.css';
 
-function SocialPosterForm() {
+function SocialPosterForm({ darkMode }) {
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
   const [formData, setFormData] = useState({
     text: '',
@@ -229,10 +231,16 @@ function SocialPosterForm() {
       <PlatformSelector
         selectedPlatforms={selectedPlatforms}
         onTogglePlatform={handlePlatformToggle}
+        darkMode={darkMode}
       />
 
       {selectedPlatforms.length > 0 && (
-        <form onSubmit={handleSubmit} className="post-form">
+        <motion.form 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          onSubmit={handleSubmit} 
+          className="post-form"
+        >
           <div className="form-section">
             <h3>Content</h3>
             {renderTextFields()}
@@ -253,20 +261,35 @@ function SocialPosterForm() {
           )}
 
           {selectedPlatforms.length > 0 && (
-            <div className="platform-notes">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="platform-notes"
+            >
               <h4>Platform Requirements:</h4>
               {selectedPlatforms.map(platformKey => {
                 const platform = platforms[platformKey];
                 return (
-                  <div key={platformKey} className="platform-note">
-                    <span style={{ color: platform.color }}>
-                      {platform.icon} <strong>{platform.name}:</strong>
-                    </span>
-                    <span>{platform.notes}</span>
-                  </div>
+                  <motion.div 
+                    key={platformKey} 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="platform-note"
+                  >
+                    <div className="platform-note-header">
+                      <span style={{ color: platform.color }}>
+                        {platform.icon} <strong>{platform.name}:</strong>
+                      </span>
+                      <Tooltip 
+                        content={`${platform.name} has specific posting requirements. Make sure to follow these guidelines for successful posting.`}
+                        darkMode={darkMode}
+                      />
+                    </div>
+                    <span className="platform-note-text">{platform.notes}</span>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
           )}
 
           {errors.general && (
@@ -284,12 +307,16 @@ function SocialPosterForm() {
             )
           ))}
 
-          <div className="form-actions">
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="form-actions"
+          >
             <button type="submit" className="submit-button">
               🚀 Post to {selectedPlatforms.length} Platform{selectedPlatforms.length !== 1 ? 's' : ''}
             </button>
-          </div>
-        </form>
+          </motion.div>
+        </motion.form>
       )}
 
       {showPreview && (
@@ -297,6 +324,7 @@ function SocialPosterForm() {
           selectedPlatforms={selectedPlatforms}
           formData={formData}
           onClose={() => setShowPreview(false)}
+          darkMode={darkMode}
         />
       )}
     </div>

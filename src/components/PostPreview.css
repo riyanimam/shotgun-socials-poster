@@ -23,6 +23,11 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+.preview-modal.dark {
+  background: rgba(30, 30, 30, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .preview-header {
   display: flex;
   align-items: center;
@@ -35,6 +40,10 @@
   margin: 0;
   color: #333;
   font-size: 1.5rem;
+}
+
+.preview-modal.dark .preview-header h2 {
+  color: #f5f5f5;
 }
 
 .close-button {
@@ -94,6 +103,10 @@
   background: #fafafa;
 }
 
+.preview-modal.dark .platform-preview-body {
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .preview-field {
   margin-bottom: 1rem;
 }
@@ -117,6 +130,10 @@
   line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+.preview-modal.dark .preview-field p {
+  color: #d1d5db;
 }
 
 .webhook-url {

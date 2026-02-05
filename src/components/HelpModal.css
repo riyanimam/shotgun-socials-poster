@@ -1,0 +1,220 @@
+.help-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.help-modal-content {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.help-modal-content.dark {
+  background: rgba(30, 30, 30, 0.98);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.help-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text-tertiary, #666);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.help-modal-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.help-modal-content.dark .help-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.help-modal-header {
+  margin-bottom: 24px;
+}
+
+.help-modal-header h2 {
+  font-size: 1.8rem;
+  margin: 0 0 8px 0;
+  color: var(--text-primary, #333);
+}
+
+.help-modal-content.dark .help-modal-header h2 {
+  color: #f5f5f5;
+}
+
+.help-modal-header p {
+  margin: 0;
+  color: var(--text-secondary, #666);
+  font-size: 0.95rem;
+}
+
+.help-modal-content.dark .help-modal-header p {
+  color: #d1d5db;
+}
+
+.help-section {
+  margin-bottom: 24px;
+}
+
+.help-section h3 {
+  font-size: 1.1rem;
+  margin: 0 0 12px 0;
+  color: var(--text-primary, #333);
+}
+
+.help-modal-content.dark .help-section h3 {
+  color: #f5f5f5;
+}
+
+.help-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.help-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.help-modal-content.dark .help-tip {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+.help-tip-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  color: white;
+}
+
+.help-tip-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  color: var(--text-primary, #333);
+}
+
+.help-modal-content.dark .help-tip-content h4 {
+  color: #f5f5f5;
+}
+
+.help-tip-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.5;
+}
+
+.help-modal-content.dark .help-tip-content p {
+  color: #9ca3af;
+}
+
+.help-shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.help-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+}
+
+.help-modal-content.dark .help-shortcut {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.help-shortcut kbd {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 50px;
+  text-align: center;
+}
+
+.help-modal-content.dark .help-shortcut kbd {
+  background: #2d2d2d;
+  border-color: #444;
+  color: #f5f5f5;
+}
+
+.help-shortcut span {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+}
+
+.help-modal-content.dark .help-shortcut span {
+  color: #9ca3af;
+}
+
+.help-description {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #666);
+}
+
+.help-modal-content.dark .help-description {
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .help-modal-content {
+    padding: 24px;
+  }
+
+  .help-modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .help-tip {
+    flex-direction: column;
+  }
+}
