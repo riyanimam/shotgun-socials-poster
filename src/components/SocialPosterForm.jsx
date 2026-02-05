@@ -177,7 +177,7 @@ function SocialPosterForm() {
                 className="text-input"
               />
             )}
-            {platforms[platformKey]?.fields[fieldName]?.placeholder && (
+            {fieldConfig.placeholder && (
               <small className="field-hint">{fieldConfig.placeholder}</small>
             )}
           </div>
