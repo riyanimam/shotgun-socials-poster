@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { platforms, platformKeys, validatePost, getRequiredFields } from '../utils/platformConfig';
+import { platforms, validatePost } from '../utils/platformConfig';
 import PlatformSelector from './PlatformSelector';
 import PostPreview from './PostPreview';
 import './SocialPosterForm.css';
@@ -111,7 +111,6 @@ function SocialPosterForm() {
   };
 
   const renderTextFields = () => {
-    const requiredFields = getRequiredFields(selectedPlatforms);
     const fieldElements = [];
     const processedFields = new Set();
 
