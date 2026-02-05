@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{ts,tsx,js,jsx,json}"
+      run: npm run lint:fix
+    type-check:
+      glob: "*.{ts,tsx}"
+      run: npm run type-check
+    test:
+      glob: "*.{ts,tsx}"
+      run: npm run test
+
+pre-push:
+  commands:
+    test-coverage:
+      run: npm run test:coverage
