@@ -204,17 +204,17 @@
   .preview-modal {
     max-height: 95vh;
   }
-  
+
   .preview-header,
   .preview-content,
   .preview-footer {
     padding: 1rem 1.5rem;
   }
-  
+
   .preview-footer {
     flex-direction: column-reverse;
   }
-  
+
   .preview-button {
     width: 100%;
   }

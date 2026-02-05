@@ -101,15 +101,15 @@ body.dark-mode .selected-count {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 0.75rem;
   }
-  
+
   .platform-card {
     padding: 1rem 0.5rem;
   }
-  
+
   .platform-icon {
     font-size: 1.5rem;
   }
-  
+
   .platform-name {
     font-size: 0.8rem;
   }

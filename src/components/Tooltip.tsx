@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { HelpCircle } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion' // eslint-disable-line no-unused-vars
+import { useState } from 'react'
 import './Tooltip.css'
 
-export default function Tooltip({ content, darkMode }) {
+interface TooltipProps {
+  content: string
+  darkMode: boolean
+}
+
+export default function Tooltip({ content, darkMode }: TooltipProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (

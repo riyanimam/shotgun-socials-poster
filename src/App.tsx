@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-import { Moon, Sun, HelpCircle } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion' // eslint-disable-line no-unused-vars
+import { motion } from 'framer-motion'
+import { HelpCircle, Moon, Sun } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import SocialPosterForm from './components/SocialPosterForm'
 import HelpModal from './components/HelpModal'
+import SocialPosterForm from './components/SocialPosterForm'
 
-function App() {
+export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('darkMode') === 'true'
   })
@@ -67,5 +67,3 @@ function App() {
     </div>
   )
 }
-
-export default App
