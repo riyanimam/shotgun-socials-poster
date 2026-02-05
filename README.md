@@ -90,6 +90,39 @@ npm run dev
 - Message max: 2,000 characters
 - Optional embed support with rich formatting
 
+## Deployment
+
+This project is configured to deploy automatically to GitHub Pages.
+
+### GitHub Pages Setup
+
+The repository is configured with:
+1. A GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys on push to main
+2. Vite configured with the correct base path for GitHub Pages
+
+### Automatic Deployment
+
+Every push to the `main` branch will automatically:
+1. Install dependencies
+2. Build the project
+3. Deploy to GitHub Pages
+
+The site will be available at: `https://riyanimam.github.io/shotgun-socials-poster/`
+
+### Manual Deployment
+
+You can also trigger a deployment manually:
+1. Go to the Actions tab in the GitHub repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click "Run workflow"
+
+### Enable GitHub Pages
+
+To enable GitHub Pages for this repository:
+1. Go to repository Settings → Pages
+2. Under "Build and deployment", select "GitHub Actions" as the source
+3. The site will be deployed automatically
+
 ## Development
 
 ### Build for Production
