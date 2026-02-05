@@ -242,3 +242,17 @@ export function validatePost(
 
   return errors
 }
+
+// Get unique fields needed for selected platforms
+export function getRequiredFields(selectedPlatforms: PlatformKey[]): string[] {
+  const fields = new Set<string>()
+
+  for (const platformKey of selectedPlatforms) {
+    const platform = platforms[platformKey]
+    for (const field of Object.keys(platform.fields)) {
+      fields.add(field)
+    }
+  }
+
+  return Array.from(fields)
+}
