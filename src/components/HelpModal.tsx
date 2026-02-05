@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion' // eslint-disable-line no-unused-vars
+import { AnimatePresence, motion } from 'framer-motion'
 import { Eye, Info, Search, Star, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import './HelpModal.css'

@@ -1,5 +1,5 @@
 import type { FormData, PlatformKey } from '@/types'
-import { motion } from 'framer-motion' // eslint-disable-line no-unused-vars
+import { motion } from 'framer-motion'
 import { platforms } from '../utils/platformConfig'
 import './PostPreview.css'
 

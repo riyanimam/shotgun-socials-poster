@@ -1,5 +1,5 @@
 import type { FormData, PlatformFieldConfig, PlatformKey, ValidationErrors } from '@/types'
-import { motion } from 'framer-motion' // eslint-disable-line no-unused-vars
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { platforms, validatePost } from '../utils/platformConfig'
 import PlatformSelector from './PlatformSelector'

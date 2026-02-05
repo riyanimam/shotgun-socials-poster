@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion' // eslint-disable-line no-unused-vars
+import { AnimatePresence, motion } from 'framer-motion'
 import { HelpCircle } from 'lucide-react'
 import { useState } from 'react'
 import './Tooltip.css'

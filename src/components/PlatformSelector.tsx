@@ -1,5 +1,5 @@
 import type { PlatformKey } from '@/types'
-import { motion } from 'framer-motion' // eslint-disable-line no-unused-vars
+import { motion } from 'framer-motion'
 import { platformKeys, platforms } from '../utils/platformConfig'
 import './PlatformSelector.css'
 
